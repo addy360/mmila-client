@@ -7,6 +7,7 @@ import Slide from "@mui/material/Slide";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import PostGallery from "./PostGallery";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -171,6 +172,7 @@ export default function FullScreenDialog({ open, handleClose }) {
                 accusamus consectetur accusantium consequuntur quisquam
                 excepturi corrupti deleniti soluta delectus.
               </Typography>
+              <PostGallery />
             </CardContent>
           </Card>
         </Container>

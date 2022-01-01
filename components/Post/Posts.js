@@ -1,26 +1,37 @@
 import { Container, Grid } from "@mui/material";
+import { useCallback, useState } from "react";
 import PostItem from "./PostItem";
+import PostDetailed from "./PostDetailed";
 
 const Posts = () => {
+  const [onDetail, setOndetail] = useState(null);
+  const handleOnDetail = useCallback((data) => {
+    setOndetail(data);
+    console.log(`data`, data);
+  }, []);
   return (
-    <div>
+    <>
       <Container>
         <Grid container spacing={4}>
-          <PostItem />
-          <PostItem />
-          <PostItem />
-          <PostItem />
-          <PostItem />
-          <PostItem />
-          <PostItem />
-          <PostItem />
-          <PostItem />
-          <PostItem />
-          <PostItem />
-          <PostItem />
+          <Grid item xs={12} sm={6} md={4}>
+            <PostItem onDetail={handleOnDetail} />
+          </Grid>{" "}
+          <Grid item xs={12} sm={6} md={4}>
+            <PostItem onDetail={handleOnDetail} />
+          </Grid>{" "}
+          <Grid item xs={12} sm={6} md={4}>
+            <PostItem onDetail={handleOnDetail} />
+          </Grid>{" "}
+          <Grid item xs={12} sm={6} md={4}>
+            <PostItem onDetail={handleOnDetail} />
+          </Grid>{" "}
+          <Grid item xs={12} sm={6} md={4}>
+            <PostItem onDetail={handleOnDetail} />
+          </Grid>
         </Grid>
       </Container>
-    </div>
+      <PostDetailed open={onDetail} handleClose={() => setOndetail(null)} />
+    </>
   );
 };
 

@@ -1,14 +1,14 @@
+import { CardActionArea, Grid } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Grid } from "@mui/material";
 
-const PostItem = () => {
+const PostItem = ({ onDetail }) => {
   return (
-    <Grid item xs={12} sm={6} md={4}>
-      <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea>
+    <>
+      <Card sx={{ maxWidth: "full" }}>
+        <CardActionArea onClick={() => onDetail(true)}>
           <CardMedia
             component="img"
             height="140"
@@ -27,7 +27,7 @@ const PostItem = () => {
           </CardContent>
         </CardActionArea>
       </Card>
-    </Grid>
+    </>
   );
 };
 

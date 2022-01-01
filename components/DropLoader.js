@@ -1,14 +1,11 @@
-import { Backdrop, CircularProgress } from "@mui/material";
+import { CircularProgress } from "@mui/material";
+import DropContainer from "./DropContainer";
 
 const DropLoader = () => {
   return (
-    <Backdrop
-      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-      open={false}
-      // onClick={() => setOpen(false)}
-    >
+    <DropContainer>
       <CircularProgress color="inherit" />
-    </Backdrop>
+    </DropContainer>
   );
 };
 
